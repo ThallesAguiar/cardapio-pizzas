@@ -11,7 +11,7 @@ import Carroussel from "../components/Carroussel";
 export default {
   name: 'Home',
    components: {
-    Carroussel
+    Carroussel,
   },
 
 }

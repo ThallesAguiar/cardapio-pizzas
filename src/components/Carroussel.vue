@@ -11,6 +11,12 @@
       ></v-carousel-item>
     </v-carousel>
     <v-container>
+
+      <br/>
+      <br/>
+      <InfoPizza/>
+      <br/>
+      <br/>
       <h2 class="font-weight-black">
         As pizzas são feitas com todo cuidado e carinho para o melhor sabor
         para o cliente. Elas são feitas com molho caseiro e não os comprados,
@@ -25,7 +31,11 @@
 </template>
 
 <script>
+import InfoPizza from './InfoPizza'
 export default {
+  components: {
+    InfoPizza
+  },
   data: () => ({
     items: [
       {
