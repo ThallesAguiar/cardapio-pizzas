@@ -12,7 +12,7 @@
             <p class="font-weight-black">Sabores: 3</p>
             <v-divider></v-divider>
             <p class="font-weight-black">
-              Quais: Americana, Bacon, Bagunça, Corn bacon, Frango crocante,
+              Quais: Americana, Bacon,Frango cheddar, Frango catupiry, Bagunça, Corn bacon, Frango crocante,
               Milho, Napolitana, Strogonoff de frango com ou seu palha. 
             </p>
             <v-btn to="/menus" color="error">CARDÁPIO</v-btn>

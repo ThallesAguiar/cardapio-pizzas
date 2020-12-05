@@ -1,29 +1,28 @@
 <template>
   <div class="body">
     <v-container>
+      <v-card class="mx-auto" dark>
+        <v-list>
+          <v-list-group
+            color="#B71C1C"
+            no-action
+            sub-group
+            v-for="(salgada, index) in salgadas"
+            :key="index"
+          >
+            <template v-slot:activator>
+              <v-list-item-content>
+                <v-list-item-title>{{ salgada.nome }}</v-list-item-title>
+                <small>{{ salgada.tipo }}</small>
+              </v-list-item-content>
+            </template>
 
-    
-    <v-card class="mx-auto" dark>
-      <v-list>
-        <v-list-group
-          color="#B71C1C"
-          no-action
-          sub-group
-          v-for="(salgada, index) in salgadas"
-          :key="index"
-        >
-          <template v-slot:activator>
-            <v-list-item-content>
-              <v-list-item-title>{{ salgada.nome }}</v-list-item-title>
-            </v-list-item-content>
-          </template>
-
-          <v-list-item type="#B71C1C" link>
-            <v-list-item-title>{{ salgada.ingredientes }}</v-list-item-title>
-          </v-list-item>
-        </v-list-group>
-      </v-list>
-    </v-card>
+            <v-list-item type="#B71C1C" link>
+              <v-list-item-title>{{ salgada.ingredientes }}</v-list-item-title>
+            </v-list-item>
+          </v-list-group>
+        </v-list>
+      </v-card>
     </v-container>
   </div>
 </template>
@@ -36,17 +35,21 @@ export default {
       // { nome: "Alcapone", ingredientes: "filé grelhado, 4 queijos" },
       // { nome: "Alemã", ingredientes: "califórnia, frango" },
       // { nome: "Alho e óleo", ingredientes: "alho e óleo e catupiry" },
-      { nome: "Americana", ingredientes: "presunto e calabresa" },
+      {
+        nome: "Americana",
+        ingredientes: "presunto e calabresa",
+        tipo: "Premium",
+      },
       // { nome: "Argentina", ingredientes: "calabresa e milho" },
       // { nome: "Atum", ingredientes: "atum e orégano" },
-      { nome: "Bacon", ingredientes: "bacon" },
-      { nome: "Bagunça", ingredientes: "frango e bacon" },
+      { nome: "Bacon", ingredientes: "bacon", tipo: "Premium" },
+      { nome: "Bagunça", ingredientes: "frango e bacon", tipo: "Premium" },
       // {
       //   nome: "Brasileira",
       //   ingredientes: "tomate picado, ervilha, calabresa, bacon e palmito"
       // },
       // { nome: "Brócolis", ingredientes: "brócolis e catupiry" },
-      { nome: "Calabresa", ingredientes: "calabresa" },
+      
       // {
       //   nome: "Camarão (será cobrado R$10,00 a mais)",
       //   ingredientes: "camarão ao molho"
@@ -59,7 +62,7 @@ export default {
       // { nome: "Champignon", ingredientes: "champignon" },
       // { nome: "Colonial", ingredientes: "salame colonial e azeitona" },
       // { nome: "Coração", ingredientes: "coração ao molho" },
-      { nome: "Corn/bacon", ingredientes: "bacon e milho" },
+      { nome: "Corn/bacon", ingredientes: "bacon e milho", tipo: "Premium" },
       // { nome: "Espanhola", ingredientes: "cebola, milho e bacon" },
       // { nome: "Frango grelhado", ingredientes: "frango grelhado" },
       // {
@@ -70,8 +73,37 @@ export default {
       //   nome: "Frango grelhado acebolado",
       //   ingredientes: "frango grelhado e cebola"
       // },
-      { nome: "Frango", ingredientes: "frango temperado" },
-      { nome: "Frango crocante", ingredientes: "frango, catupiry e palha" },
+      
+      {
+        nome: "Frango Cheddar",
+        ingredientes: "frango temperado com cheddar",
+        tipo: "Premium",
+      },
+      {
+        nome: "Frango catupiry",
+        ingredientes: "frango temperado com catupiry",
+        tipo: "Premium",
+      },
+      {
+        nome: "Frango crocante",
+        ingredientes: "frango, catupiry e palha",
+        tipo: "Premium",
+      },
+      {
+        nome: "Napolitana",
+        ingredientes: "tomate e azeitona",
+        tipo: "Premium",
+      },
+      {
+        nome: "Strogonoff de frango com palha",
+        ingredientes: "strogonoff com batata palha",
+        tipo: "Premium",
+      },
+      {
+        nome: "Strogonoff de frango",
+        ingredientes: "strogonoff com milho verde",
+        tipo: "Premium",
+      },
       // { nome: "Filé grelhado", ingredientes: "filé grelhado" },
       // {
       //   nome: "Filé grelhado ao alho e óleo",
@@ -89,14 +121,28 @@ export default {
       //   nome: "Moda da casa",
       //   ingredientes: "frango, calabresa e califórnia (sabores separados)"
       // },
-      { nome: "Marguerita", ingredientes: "tomate em rodela e queijo" },
-      { nome: "Mussarela", ingredientes: "mussarela e orégano" },
-      { nome: "Milho", ingredientes: "milho com creme de leite" },
+      { nome: "Calabresa", ingredientes: "calabresa", tipo: "Tradicional" },
+      { nome: "Frango", ingredientes: "frango temperado", tipo: "Tradicional" },
+      {
+        nome: "Marguerita",
+        ingredientes: "tomate em rodela e queijo",
+        tipo: "Tradicional",
+      },
+      {
+        nome: "Mussarela",
+        ingredientes: "mussarela e orégano",
+        tipo: "Tradicional",
+      },
+      {
+        nome: "Milho",
+        ingredientes: "milho com creme de leite",
+        tipo: "Tradicional",
+      },
       // {
       //   nome: "Mista",
       //   ingredientes: "calabresa, milho e bacon (sabores separados)"
       // },
-      { nome: "Napolitana", ingredientes: "tomate e azeitona" },
+      
       // {
       //   nome: "Nobre",
       //   ingredientes:
@@ -110,21 +156,18 @@ export default {
       //   nome: "Portuguesa",
       //   ingredientes: "presunto, cebola refogada, ervilha e ovos cozidos"
       // },
-      { nome: "Presunto e queijo", ingredientes: "presunto e queijo" },
+      {
+        nome: "Presunto e queijo",
+        ingredientes: "presunto e queijo",
+        tipo: "Tradicional",
+      },
       // {
       //   nome: "Quatro queijo",
       //   ingredientes: "mussarela, parmessão, provolone e catupiry"
       // },
       // { nome: "Siciliana", ingredientes: "cebola refogada e calabresa" },
       // { nome: "Strogonoff", ingredientes: "strogonoff e orégano" },
-      {
-        nome: "Strogonoff de frango com palha",
-        ingredientes: "strogonoff com batata palha",
-      },
-      {
-        nome: "Strogonoff de frango",
-        ingredientes: "strogonoff com milho verde",
-      },
+      
       // {
       //   nome: "Super pizza",
       //   ingredientes: "presunto, frango, 4 queijos e palmito"
