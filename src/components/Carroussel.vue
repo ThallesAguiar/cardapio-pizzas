@@ -42,6 +42,9 @@ export default {
         src: "https://thalles-pizzas.s3-sa-east-1.amazonaws.com/mista.jpg",
       },
       {
+        src: "https://thalles-pizzas.s3-sa-east-1.amazonaws.com/strogo+frango.jpg",
+      },
+      {
         src: "https://thalles-pizzas.s3-sa-east-1.amazonaws.com/cornbacon.jpg",
       },
       {
